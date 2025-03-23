@@ -1,1 +1,1 @@
-# opsverse-tf-modules
+Updated README content with details of EC2 and S3 Terraform modules, their inputs, outputs, and usage examples.
