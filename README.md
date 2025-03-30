@@ -61,3 +61,16 @@ module "s3" {
 ```
 
 Replace `main` with the desired branch or tag to use a specific version of the module.
+---
+## State Management
+Use S3 for remote state management as below:
+```
+terraform {
+  backend "s3" {
+    bucket = "your-terraform-state-bucket"
+    key    = "<your repo name>/envs/dev/terraform.tfstate"
+    region = "us-east-1"
+    encrypt = true
+  }
+}
+```
