@@ -17,7 +17,11 @@ This repository contains reusable Terraform modules for AWS infrastructure.
 ```hcl
 module "ec2" {
   source            = "github.com/OpsVerseIO/opsverse-tf-modules//modules/ec2?ref=main"
-  instance_type     = "t3.medium"
+  # Required parameters
+  name_prefix      = "test-app-server"
+  instance_type    = "t3.medium"  # Only t3.small or t3.medium allowed
+  application_name = "inventory-system"
+  owner            = "platform-team"
 }
 ```
 
