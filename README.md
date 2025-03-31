@@ -64,7 +64,7 @@ Use S3 for remote state management as below:
 ```
 terraform {
   backend "s3" {
-    bucket = "your-terraform-state-bucket"
+    bucket = "devopsnow-us-east-1-tfstate"
     key    = "<your repo name>/envs/dev/terraform.tfstate"
     region = "us-east-1"
     encrypt = true
