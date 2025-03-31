@@ -18,9 +18,6 @@ This repository contains reusable Terraform modules for AWS infrastructure.
 module "ec2" {
   source            = "github.com/OpsVerseIO/opsverse-tf-modules//modules/ec2?ref=main"
   instance_type     = "t3.medium"
-  ami_id           = "ami-12345678"
-  subnet_id        = "subnet-abc123"
-  security_group_ids = ["sg-123456"]
 }
 ```
 
