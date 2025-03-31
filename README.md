@@ -40,8 +40,10 @@ module "ec2" {
 ```hcl
 module "s3" {
   source            = "github.com/OpsVerseIO/opsverse-tf-modules//modules/s3?ref=main"
-  bucket_name       = "my-terraform-bucket"
-  versioning_enabled = true
+  # Required parameters
+  bucket_name      = "opsverse-test-bucket"
+  application_name = "crm-system"
+  owner            = "data-team"
 }
 ```
 
