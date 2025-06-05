@@ -1,0 +1,61 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: opsverse-tf-modules
+  description: |
+    A library of reusable Terraform modules for AWS infrastructure, maintained by OpsVerseIO. Includes modules for EC2, S3, RDS, MWAA, and more.
+  annotations:
+    github.com/project-slug: OpsVerseIO/opsverse-tf-modules
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - terraform
+    - aws
+    - infrastructure
+    - modules
+  links:
+    - url: https://github.com/OpsVerseIO/opsverse-tf-modules
+      title: GitHub Repository
+      icon: github
+spec:
+  type: library
+  lifecycle: production
+  owner: OpsVerseIO
+  providesApis: []
+  dependsOn:
+    - resource:default/tf-rds
+    - resource:default/tf-mwaa
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tf-rds
+  description: AWS RDS instance used by the opsverse-tf-modules Terraform library.
+  tags:
+    - aws
+    - rds
+    - database
+spec:
+  type: database
+  owner: OpsVerseIO
+  system: opsverse-tf-modules
+  dependencyOf:
+    - component:default/opsverse-tf-modules
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tf-mwaa
+  description: AWS MWAA (Managed Workflows for Apache Airflow) instance used by the opsverse-tf-modules Terraform library.
+  tags:
+    - aws
+    - mwaa
+    - airflow
+    - workflow
+spec:
+  type: workflow
+  owner: OpsVerseIO
+  system: opsverse-tf-modules
+  dependencyOf:
+    - component:default/opsverse-tf-modules
