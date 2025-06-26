@@ -59,3 +59,4 @@ spec:
   system: opsverse-tf-modules
   dependencyOf:
     - component:default/opsverse-tf-modules
+
