@@ -60,3 +60,4 @@ spec:
   dependencyOf:
     - component:default/opsverse-tf-modules
 
+
